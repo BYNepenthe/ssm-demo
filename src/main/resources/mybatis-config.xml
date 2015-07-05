@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<mappers>
+		<!-- 如果Java接口与XML文件在一个相对路径下时，可以不在myBatis配置文件的mappers中声明 -->
+		<!-- <mapper resource="com/uuider/jfreechart/mappers/XzqhMapper.xml" /> -->
+	</mappers>
+</configuration>		
+			

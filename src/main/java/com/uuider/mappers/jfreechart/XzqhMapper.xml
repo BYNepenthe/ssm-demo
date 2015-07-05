@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.uuider.mappers.jfreechart.XzqhMapper">
+
+	<!-- java属性，数据库表字段 映射定义 -->
+	<resultMap type="com.uuider.model.jfreechart.Xzqh"
+		id="xzqhMapper_resultMap_xzqh">
+		<id property="id" column="ID" javaType="int"
+			jdbcType="INTEGER" />
+		<result property="code" column="CODE" javaType="String"
+			jdbcType="VARCHAR" />
+		<result property="province" column="PROVINCE" javaType="String"
+			jdbcType="VARCHAR" />
+		<result property="city" column="CITY"
+			javaType="String" jdbcType="VARCHAR" />
+		<result property="district" column="DISTRICT" javaType="String"
+			jdbcType="VARCHAR" />
+		<result property="parent" column="PARENT" javaType="int"
+			jdbcType="INTEGER" />
+	</resultMap>
+
+	<!-- <insert id="createStudent" parameterType="com.uuider.studentmanager.model.StudentEntity">
+		<selectKey keyProperty="studentId" resultType="String"
+			order="BEFORE">
+			select nextval('student')
+		</selectKey>
+		INSERT INTO STUDENT_TBL(STUDENT_ID,
+		STUDENT_NAME,
+		STUDENT_SEX,
+		STUDENT_BIRTHDAY,
+		PHOTO_ID,
+		CLASS_ID,
+		PLACE_ID)
+		VALUES (#{studentId, },
+		#{studentName},
+		#{studentSex},
+		#{studentBirthday},
+		#{photoId},
+		#{classId},
+		#{placeId})
+	</insert> -->
+
+	<!-- <update id="updateStudentById" parameterType="com.uuider.studentmanager.model.StudentEntity">
+		UPDATE STUDENT_TBL
+		<set>
+			<if test="studentName != null and studentName != '' ">
+				STUDENT_TBL.STUDENT_NAME = #{studentName,
+				jdbcType=VARCHAR},
+			</if>
+			<if test="studentSex != null and studentSex != '' ">
+				STUDENT_TBL.STUDENT_SEX = #{studentSex,
+				jdbcType=INTEGER},
+			</if>
+			<if test="studentBirthday != null ">
+				STUDENT_TBL.STUDENT_BIRTHDAY = #{studentBirthday,
+				jdbcType=DATE},
+			</if>
+			<if test="classId != '' ">
+				STUDENT_TBL.CLASS_ID = #{classId, jdbcType=VARCHAR},
+			</if>
+			<if test="placeId != '' ">
+				STUDENT_TBL.PLACE_ID = #{placeId, jdbcType=VARCHAR}
+			</if>
+		</set>
+		WHERE STUDENT_TBL.STUDENT_ID = #{studentId, jdbcType=VARCHAR}
+	</update> -->
+
+	<!-- <select id="getProvince" resultMap="xzqhMapper_resultMap_xzqh">
+		SELECT A.ID,
+		A.CODE,
+		A.PROVINCE,
+		A.CITY,
+		A.DISTRICT,
+		A.PARENT
+		FROM NATION A
+		WHERE A.PARENT = 1
+	</select> -->
+
+	<select id="getProvince" resultMap="xzqhMapper_resultMap_xzqh">
+		SELECT A.ID,
+		A.CODE,
+		A.PROVINCE,
+		A.CITY,
+		A.DISTRICT,
+		A.PARENT
+		FROM NATION A
+		WHERE A.PARENT = 1
+	</select>
+
+	<!--
+	<select id="countStudentBaseAllList" resultType="int">
+		SELECT
+		COUNT(ST.STUDENT_ID)
+		FROM STUDENT_TBL ST
+		WHERE ST.STUDENT_NAME LIKE CONCAT(CONCAT('%', #{query,
+		jdbcType=VARCHAR}),'%')
+	</select> -->
+</mapper>
